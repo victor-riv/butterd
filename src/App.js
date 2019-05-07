@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Switch, Router, Route } from "react-router-dom";
+import { MoviesContextProvider } from "./context/movies-context";
+import MoviesGrid from "./components/MoviesGrid";
 
-function App() {
+import "./App.css";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MoviesContextProvider>
+      <div className="App">
+        <Switch>
+          <Route exact path="/" component={MoviesGrid} />
+        </Switch>
+      </div>
+    </MoviesContextProvider>
   );
-}
+};
 
 export default App;
