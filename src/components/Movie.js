@@ -12,12 +12,12 @@ const Movie = ({ details }) => {
     <div
       className="movie"
       style={{
-        background: `linear-gradient(rgba(95, 44, 130, 0.5), rgba(73, 160, 157, 0.5)), url(${backdrop})`,
+        background: `linear-gradient(rgba(95, 44, 130, 0.3), rgba(0, 0, 0, 0.9)), url(${backdrop})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover"
       }}
     >
-      <animated.h3 style={props}>{details.title}</animated.h3>
+      <animated.h5 style={props}>{details.title}</animated.h5>
     </div>
   );
 };
