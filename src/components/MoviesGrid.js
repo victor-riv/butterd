@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { MoviesContext } from "../context/movies-context";
 import { getNowPlaying } from "../services/api-service";
-import Movie from "./Movie";
+import GridMovie from "./GridMovie";
 import "../styles/moviesGrid.css";
 
 const MoviesGrid = () => {
@@ -19,7 +19,7 @@ const MoviesGrid = () => {
     });
   };
 
-  const renderMovieGrid = movie => <Movie key={movie.id} details={movie} />;
+  const renderMovieGrid = movie => <GridMovie key={movie.id} details={movie} />;
 
   return (
     <div>

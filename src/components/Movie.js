@@ -1,23 +1,13 @@
-import React, { useEffect } from "react";
-import { useSpring, animated } from "react-spring";
+import React from "react";
 
-const Movie = ({ details }) => {
-  useEffect(() => {
-    console.log(details);
-  }, []);
-
-  const backdrop = `http://image.tmdb.org/t/p/w300/${details.backdrop_path}`;
-  const props = useSpring({ opacity: 1, from: { opacity: 0 } });
+const Movie = ({ movie }) => {
   return (
-    <div
-      className="movie"
-      style={{
-        background: `linear-gradient(rgba(95, 44, 130, 0.3), rgba(0, 0, 0, 0.9)), url(${backdrop})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover"
-      }}
-    >
-      <animated.h5 style={props}>{details.title}</animated.h5>
+    <div className="movie-card">
+      <img
+        src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}
+        alt="movie"
+      />
+      <p>{movie.title}</p>
     </div>
   );
 };
