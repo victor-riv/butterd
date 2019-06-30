@@ -1,17 +1,22 @@
 import React from "react";
-import { Switch, Router, Route } from "react-router-dom";
-import { MoviesContextProvider } from "./context/movies-context";
-import MoviesGrid from "./components/MoviesGrid";
+import { Switch, Route } from "react-router-dom";
+import Container from "@material-ui/core/Container";
 
-import "./App.css";
+import { MoviesContextProvider } from "./context/movies-context";
+
+import { NavBar } from "./components/NavBar";
+import { Collection } from "./pages/Collection";
 
 const App = () => {
   return (
     <MoviesContextProvider>
       <div className="App">
-        <Switch>
-          <Route exact path="/" component={MoviesGrid} />
-        </Switch>
+        <NavBar />
+        <Container maxWidth="md">
+          <Switch>
+            <Route exact path="/" component={Collection} />
+          </Switch>
+        </Container>
       </div>
     </MoviesContextProvider>
   );
